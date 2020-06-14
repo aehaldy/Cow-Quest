@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Scenes/NPC/Sprites/bunny.tex" type="Texture" id=1]
+[ext_resource path="res://Scenes/NPC/Bunny.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "flee"
+length = 2.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 14, 7, 8, 6, 7, 8, 6, 7, 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 1.5 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 8.8
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.9, 2.20414, 2.30414, 2.40414, 2.5, 2.6, 2.69586, 2.8, 2.9, 3, 3.09586, 3.19586, 3.29173, 3.6, 3.7, 3.8, 3.9, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 13, 4, 13, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4, 12, 4 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "return"
+length = 5.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 1.2, 2.4, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 4.6, 4.8, 5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 3, 4, 14, 12, 4, 12, 4, 4, 12, 4, 12, 4, 5, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Area2D")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 4.6, 5.1 ),
+"transitions": FloatArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_bun_return2"
+}, {
+"args": [  ],
+"method": "_idle_bun"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.67635, 67.9525 )
+
+[node name="Forest_Bunny" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+centered = false
+vframes = 3
+hframes = 6
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/flee = SubResource( 1 )
+anims/idle = SubResource( 2 )
+anims/return = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 21.9247, 0, 0, 3.01301, 5.72205e-06, 32.7417 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( 5.72205e-06, 32.7417 )
+transform/scale = Vector2( 21.9247, 3.01301 )
+shape = SubResource( 4 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_enter" from="Area2D" to="Area2D" method="_on_Area2D_body_enter"]
+
+[connection signal="body_exit" from="Area2D" to="Area2D" method="_on_Area2D_body_exit"]
+
+

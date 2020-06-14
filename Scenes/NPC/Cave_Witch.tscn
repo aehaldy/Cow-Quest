@@ -1,0 +1,320 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://Scenes/NPC/NPC_Object_Tween.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/NPC/Sprites/Witch.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 26.0
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "face_l"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "face_r"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 7 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "face_u"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 10 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource/name = "jump1"
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource/name = "jump1_l"
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 5, 3 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 8, 6 ]
+}
+
+[sub_resource type="Animation" id=9]
+
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+
+resource/name = "jump2_l"
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 3, 4 ]
+}
+
+[sub_resource type="Animation" id=11]
+
+resource/name = "jump2_r"
+length = 0.15
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.15 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 6, 7 ]
+}
+
+[sub_resource type="Animation" id=12]
+
+length = 0.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 3, 9, 6, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=13]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=14]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 4, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=15]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 7 ]
+}
+
+[sub_resource type="Animation" id=16]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9, 10, 11, 10 ]
+}
+
+[node name="Cave_Witch" type="KinematicBody2D"]
+
+transform/pos = Vector2( 32, 32 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.46154, 0, 0, 1.26923, 1.90735e-06, -0.999997 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, -4 )
+texture = ExtResource( 2 )
+vframes = 4
+hframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/face_l = SubResource( 2 )
+anims/face_r = SubResource( 3 )
+anims/face_u = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump1 = SubResource( 6 )
+anims/jump1_l = SubResource( 7 )
+anims/jump1_r = SubResource( 8 )
+anims/jump2 = SubResource( 9 )
+anims/jump2_l = SubResource( 10 )
+anims/jump2_r = SubResource( 11 )
+anims/turn360 = SubResource( 12 )
+anims/walk_d = SubResource( 13 )
+anims/walk_l = SubResource( 14 )
+anims/walk_r = SubResource( 15 )
+anims/walk_u = SubResource( 16 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 1.90735e-06, -0.999997 )
+transform/scale = Vector2( 2.46154, 1.26923 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+

@@ -1,0 +1,453 @@
+[gd_scene load_steps=44 format=1]
+
+[ext_resource path="res://Scenes/1Cave/Cave_opening_cut.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Grid/Grid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/1Cave/CaveFloor.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Interaction_Object/Interaction_Object.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/1Cave/CaveObst.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/NPC/Item_Object.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/NPC/Cave_Cabinet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/NPC/Brown_Cow.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/NPC/Cave_Witch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/NPC/Cave_Pouch.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/1Cave/CaveOver.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Balloon/Balloon.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Dialogbox/Dialogbox.tscn" type="PackedScene" id=14]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 544, 1088, 544, 960, 608, 960, 608, 1024 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 608, 960, 608, 896, 736, 896, 672, 960 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 736, 832, 672, 832, 672, 768 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 672, 768, 416, 768, 416, 576, 544, 640 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 480, 448, 352, 448, 352, 384, 544, 384 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 352, 384, 288, 384, 288, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 224, 576, 352, 576, 352, 832, 224, 832 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 288, 960, 288, 896, 416, 896 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 416, 896, 480, 896, 480, 1024, 416, 1088, 160, 1088, 288, 960 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 480, 1024, 480, 1088, 416, 1088 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 256, 544, 256, 544, 384, 288, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 544, 640, 864, 640, 864, 896, 672, 768 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 800, 896, 800, 960, 672, 960, 736, 896 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 672, 960, 672, 1024, 608, 1024, 608, 960 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 608, 1152, 480, 1152, 480, 1088, 544, 1088 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 608, 1024, 608, 1152, 544, 1088 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 800, 896, 736, 896, 736, 832 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 864, 896, 800, 896, 736, 832 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 864, 896, 736, 832, 672, 768 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 544, 640, 416, 576, 480, 576 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 544, 384, 544, 640, 480, 576, 480, 448 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 544, 384, 352, 384, 288, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 256, 288, 320, 224, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 1088, 160, 256, 224, 320, 224, 576 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 1088, 224, 576, 224, 832 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 1088, 224, 832, 224, 960 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 160, 1088, 224, 960, 288, 960 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 416, 896, 288, 960, 416, 896 )
+
+[sub_resource type="RectangleShape2D" id=29]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13, 13 )
+
+[node name="Cave" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="Grid" parent="." instance=ExtResource( 2 )]
+
+[node name="Floor" type="Sprite" parent="Grid"]
+
+transform/pos = Vector2( 512, 608 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cave_X_to_Forest" type="Node2D" parent="Grid" groups=[
+"Auto_Interact",
+]]
+
+transform/pos = Vector2( 544, 1120 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_X_to_Forest" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Obstacles" type="StaticBody2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 32, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 9 )
+shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/8/trigger = false
+shapes/9/shape = SubResource( 10 )
+shapes/9/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/9/trigger = false
+shapes/10/shape = SubResource( 11 )
+shapes/10/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/10/trigger = false
+shapes/11/shape = SubResource( 12 )
+shapes/11/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/11/trigger = false
+shapes/12/shape = SubResource( 13 )
+shapes/12/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/12/trigger = false
+shapes/13/shape = SubResource( 14 )
+shapes/13/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/13/trigger = false
+shapes/14/shape = SubResource( 15 )
+shapes/14/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/14/trigger = false
+shapes/15/shape = SubResource( 16 )
+shapes/15/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/15/trigger = false
+shapes/16/shape = SubResource( 17 )
+shapes/16/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/16/trigger = false
+shapes/17/shape = SubResource( 18 )
+shapes/17/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/17/trigger = false
+shapes/18/shape = SubResource( 19 )
+shapes/18/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/18/trigger = false
+shapes/19/shape = SubResource( 20 )
+shapes/19/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/19/trigger = false
+shapes/20/shape = SubResource( 21 )
+shapes/20/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/20/trigger = false
+shapes/21/shape = SubResource( 22 )
+shapes/21/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/21/trigger = false
+shapes/22/shape = SubResource( 23 )
+shapes/22/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/22/trigger = false
+shapes/23/shape = SubResource( 24 )
+shapes/23/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/23/trigger = false
+shapes/24/shape = SubResource( 25 )
+shapes/24/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/24/trigger = false
+shapes/25/shape = SubResource( 26 )
+shapes/25/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/25/trigger = false
+shapes/26/shape = SubResource( 27 )
+shapes/26/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/26/trigger = false
+shapes/27/shape = SubResource( 28 )
+shapes/27/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/27/trigger = false
+shapes/28/shape = SubResource( 29 )
+shapes/28/transform = Matrix32( 2.46154, 0, 0, 2.46154, 576, 864 )
+shapes/28/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Map" type="Sprite" parent="Grid/Obstacles"]
+
+transform/pos = Vector2( 480, 614 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Grid/Obstacles"]
+
+visibility/visible = false
+build_mode = 0
+polygon = Vector2Array( 480, 1088, 480, 1152, 608, 1152, 608, 1024, 672, 1024, 672, 960, 800, 960, 800, 896, 864, 896, 864, 640, 544, 640, 544, 384, 544, 256, 160, 256, 160, 1088, 416, 1088, 480, 1088, 480, 1024, 480, 896, 416, 896, 416, 896, 288, 896, 288, 960, 224, 960, 224, 832, 352, 832, 352, 576, 224, 576, 224, 320, 288, 320, 288, 384, 352, 384, 352, 448, 480, 448, 480, 576, 416, 576, 416, 768, 672, 768, 672, 832, 736, 832, 736, 896, 608, 896, 608, 960, 544, 960, 544, 1088 )
+shape_range = Vector2( 0, 27 )
+trigger = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/Obstacles"]
+
+visibility/visible = false
+transform/pos = Vector2( 576, 864 )
+transform/scale = Vector2( 2.46154, 2.46154 )
+shape = SubResource( 29 )
+trigger = false
+_update_shape_index = 28
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cave_WorldMap" type="Node2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 288, 800 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_WorldMap" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_SuperGro" type="StaticBody2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 672, 736 )
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script/script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_SuperGro" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_Cabinet" parent="Grid" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 544, 736 )
+
+[node name="Interaction" parent="Grid/Cave_Cabinet" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_Kimchi" type="Node2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 736, 736 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_Kimchi" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 64 )
+
+[node name="Cave_Crystal" type="Node2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 288, 288 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_Crystal" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_Bed" type="Node2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 224, 448 )
+transform/scale = Vector2( 1, 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_Bed" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Brown_Cow" parent="Grid" instance=ExtResource( 8 )]
+
+visibility/visible = false
+transform/pos = Vector2( 543, 1055 )
+
+[node name="Player" parent="Grid" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 288, 867 )
+
+[node name="Cave_Witch" parent="Grid" instance=ExtResource( 10 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 416, 480 )
+
+[node name="Interaction" parent="Grid/Cave_Witch" instance=ExtResource( 4 )]
+
+visibility/visible = false
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_Pouch" parent="Grid" instance=ExtResource( 11 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 352, 928 )
+
+[node name="Interaction" parent="Grid/Cave_Pouch" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Cave_Gargoyle" type="Node2D" parent="Grid"]
+
+editor/display_folded = true
+transform/pos = Vector2( 352, 608 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interaction" parent="Grid/Cave_Gargoyle" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+
+[node name="Overhead" type="Sprite" parent="Grid"]
+
+transform/pos = Vector2( 512, 614 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Balloon" parent="." instance=ExtResource( 13 )]
+
+[node name="Dialogbox" parent="." instance=ExtResource( 14 )]
+
+

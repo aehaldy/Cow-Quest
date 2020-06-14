@@ -1,0 +1,36 @@
+func _fixed_process(delta):
+	#var is_moving = Input.is_action_pressed("ui_move")
+	#var is_dashing = Input.is_action_pressed("ui_dash")
+	
+	dir = Vector2()
+	
+	if is_moving: 
+		if is_dashing:
+			speed = DASH_SPEED
+			if Input.is_action_pressed("ui_up"):
+				dir.y = -1
+			elif Input.is_action_pressed("ui_down"):
+				dir.y = 1
+			if Input.is_action_pressed("ui_right"):
+				dir.x = 1
+			elif Input.is_action_pressed("ui_left"):
+				dir.x = -1
+		else:
+			speed = MOVE_SPEED
+			if Input.is_action_pressed("ui_up"):
+				dir.y = -1
+			elif Input.is_action_pressed("ui_down"):
+				dir.y = 1
+			if Input.is_action_pressed("ui_right"):
+				dir.x = 1
+			elif Input.is_action_pressed("ui_left"):
+				dir.x = -1
+	else:
+		speed = 0
+	
+	#var target_pos = grid.update_child_pos(self)
+	#set_pos(target_pos)
+	
+	#var velocity = speed * dir.normalized() * delta
+	#move(velocity)
+	
