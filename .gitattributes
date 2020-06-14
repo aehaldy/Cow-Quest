@@ -1,2 +1,2 @@
-*.gd	eol=lf
+*.gd	eol=lf linguist-language=Python
 *.cfg	eol=lf
