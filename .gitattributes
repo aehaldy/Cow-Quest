@@ -1,2 +1,2 @@
-*.gd	eol=lf linguist-language=Python
-*.cfg	eol=lf
+*.gd	text diff=python
+*.cfg	linguist-vendored
