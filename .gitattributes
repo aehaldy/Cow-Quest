@@ -1,2 +1,5 @@
 *.gd	text diff=python
-*.cfg	linguist-vendored
+
+*.cfg	linguist-generated
+*.tscn linguist-generated
+*.tres linguist-generated
